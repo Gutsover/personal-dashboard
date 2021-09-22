@@ -19,10 +19,15 @@
     display: flex;
     padding: 18px;
     cursor: pointer;
+    transition: all 0.2s;
 }
 
 i {
     color: #222;
+}
+
+.tab.selected .tab-tile {
+    transform: translateY(-28px);
 }
 
 .tab-tile::before {
@@ -52,5 +57,11 @@ i {
 
 .tab-tile:hover::before {
     transform: scale(1.12);
+    opacity: 1;
+}
+
+.tab.selected .tab-tile::before {
+    border-radius: 50%;
+    transform: scale(1.1);
     opacity: 1;
 }
