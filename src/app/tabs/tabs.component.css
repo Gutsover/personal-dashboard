@@ -19,7 +19,7 @@
     display: flex;
     padding: 18px;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.2s ease-out;
 }
 
 i {
@@ -27,7 +27,9 @@ i {
 }
 
 .tab.selected .tab-tile {
-    transform: translateY(-28px);
+    transform: translateY(-50%);
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0, 0, 0, 2);
 }
 
 .tab-tile::before {
@@ -64,4 +66,29 @@ i {
     border-radius: 50%;
     transform: scale(1.1);
     opacity: 1;
+    box-shadow: 0 7px 17px rgba(0, 0, 0, 0.12);
+    transition-delay: 0.12s;
 }
+
+/* Underline effect  */
+.tab::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    width: 50%;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.85);
+    transition: all 0.2s;
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.tab.selected::after {
+    opacity: 1;
+    transform: scaleX(1);
+    transition-delay: 0.12s;
+}
+.tab.selected { outline: none;}
