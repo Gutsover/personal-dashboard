@@ -1,0 +1,6 @@
+.add-note-wrapper {
+    max-height: 100%;
+    padding: 35px;
+    overflow: auto;
+    border-radius: 5px;
+}
